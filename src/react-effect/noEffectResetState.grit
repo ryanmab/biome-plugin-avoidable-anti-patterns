@@ -1,0 +1,24 @@
+language js
+
+`useEffect(() => { $body }, $...)` as $effect where {
+	// Effect is inside a component
+	$effect <: within JsFunctionBody(statements=$stmts) ,
+	$stmts <: contains or {
+		`const [$state, $setter] = useState($init)`,
+		`const [$state, $setter] = useState<$t>($init)`
+	} where or {
+		// State defined in the component is set in the body of the effect
+		// (top-level only) to the initial value of the state
+		$body <: [
+			...,
+
+			JsExpressionStatement(expression=`$setter($init)`),
+
+			...
+		],
+		// Either setter or initial value is set to undefined
+		and { $body <: contains `$setter()`, $init <: `undefined` },
+		and { $body <: contains `$setter(undefined)`, $init <: . }
+	},
+	register_diagnostic(span=$effect, severity="error", message="This effect resets state back to its initial value when a dependency changes. Resetting all state on a prop change is usually better expressed as a `key` prop on the component: https://react.dev/learn/you-might-not-need-an-effect#resetting-all-state-when-a-prop-changes")
+}

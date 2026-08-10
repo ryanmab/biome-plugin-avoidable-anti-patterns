@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`noEffectFetchWithoutCleanup matches invalid fixture: reactDocsExample.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": [
+    {
+      "code": {
+        "value": "plugin"
+      },
+      "location": {
+        "path": "src/react-effect/__tests__/fixtures/noEffectFetchWithoutCleanup/invalid/reactDocsExample.tsx",
+        "range": {
+          "end": {
+            "column": 19,
+            "line": 12
+          },
+          "start": {
+            "column": 2,
+            "line": 7
+          }
+        }
+      },
+      "message": "This effect performs network requests with no cleanup function, so a fast dependency change can apply a stale response. Consider adding an \`ignore\` flag which is filled in a cleanup function, or use a framework for data-fetching: https://react.dev/learn/you-might-not-need-an-effect#fetching-data",
+      "severity": "ERROR"
+    }
+  ]
+}
+"
+`;
+
+exports[`noEffectFetchWithoutCleanup matches valid fixture: withCleanup.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": []
+}
+"
+`;
+
+exports[`noEffectFetchWithoutCleanup matches valid fixture: withRegularCall.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": []
+}
+"
+`;

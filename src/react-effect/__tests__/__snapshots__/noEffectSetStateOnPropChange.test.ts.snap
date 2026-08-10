@@ -1,0 +1,224 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`noEffectSetStateOnPropChange matches invalid fixture: reactDocsExample.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": [
+    {
+      "code": {
+        "value": "plugin"
+      },
+      "location": {
+        "path": "src/react-effect/__tests__/fixtures/noEffectSetStateOnPropChange/invalid/reactDocsExample.tsx",
+        "range": {
+          "end": {
+            "column": 13,
+            "line": 10
+          },
+          "start": {
+            "column": 2,
+            "line": 8
+          }
+        }
+      },
+      "message": "This effect adjusts state based on changes to props. Instead adjust the state during render based on prop changes: https://react.dev/learn/you-might-not-need-an-effect#adjusting-some-state-when-a-prop-changes",
+      "severity": "ERROR"
+    }
+  ]
+}
+"
+`;
+
+exports[`noEffectSetStateOnPropChange matches invalid fixture: withConditional.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": [
+    {
+      "code": {
+        "value": "plugin"
+      },
+      "location": {
+        "path": "src/react-effect/__tests__/fixtures/noEffectSetStateOnPropChange/invalid/withConditional.tsx",
+        "range": {
+          "end": {
+            "column": 14,
+            "line": 10
+          },
+          "start": {
+            "column": 2,
+            "line": 6
+          }
+        }
+      },
+      "message": "This effect adjusts state based on changes to props. Instead adjust the state during render based on prop changes: https://react.dev/learn/you-might-not-need-an-effect#adjusting-some-state-when-a-prop-changes",
+      "severity": "ERROR"
+    }
+  ]
+}
+"
+`;
+
+exports[`noEffectSetStateOnPropChange matches invalid fixture: withDerivedProp.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": [
+    {
+      "code": {
+        "value": "plugin"
+      },
+      "location": {
+        "path": "src/react-effect/__tests__/fixtures/noEffectSetStateOnPropChange/invalid/withDerivedProp.tsx",
+        "range": {
+          "end": {
+            "column": 13,
+            "line": 8
+          },
+          "start": {
+            "column": 2,
+            "line": 6
+          }
+        }
+      },
+      "message": "This effect adjusts state based on changes to props. Instead adjust the state during render based on prop changes: https://react.dev/learn/you-might-not-need-an-effect#adjusting-some-state-when-a-prop-changes",
+      "severity": "ERROR"
+    },
+    {
+      "code": {
+        "value": "plugin"
+      },
+      "location": {
+        "path": "src/react-effect/__tests__/fixtures/noEffectSetStateOnPropChange/invalid/withDerivedProp.tsx",
+        "range": {
+          "end": {
+            "column": 13,
+            "line": 13
+          },
+          "start": {
+            "column": 2,
+            "line": 10
+          }
+        }
+      },
+      "message": "This effect adjusts state based on changes to props. Instead adjust the state during render based on prop changes: https://react.dev/learn/you-might-not-need-an-effect#adjusting-some-state-when-a-prop-changes",
+      "severity": "ERROR"
+    }
+  ]
+}
+"
+`;
+
+exports[`noEffectSetStateOnPropChange matches invalid fixture: withExternalState.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": [
+    {
+      "code": {
+        "value": "plugin"
+      },
+      "location": {
+        "path": "src/react-effect/__tests__/fixtures/noEffectSetStateOnPropChange/invalid/withExternalState.tsx",
+        "range": {
+          "end": {
+            "column": 13,
+            "line": 11
+          },
+          "start": {
+            "column": 2,
+            "line": 9
+          }
+        }
+      },
+      "message": "This effect adjusts state based on changes to props. Instead adjust the state during render based on prop changes: https://react.dev/learn/you-might-not-need-an-effect#adjusting-some-state-when-a-prop-changes",
+      "severity": "ERROR"
+    }
+  ]
+}
+"
+`;
+
+exports[`noEffectSetStateOnPropChange matches invalid fixture: withMultiple.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": [
+    {
+      "code": {
+        "value": "plugin"
+      },
+      "location": {
+        "path": "src/react-effect/__tests__/fixtures/noEffectSetStateOnPropChange/invalid/withMultiple.tsx",
+        "range": {
+          "end": {
+            "column": 19,
+            "line": 8
+          },
+          "start": {
+            "column": 2,
+            "line": 6
+          }
+        }
+      },
+      "message": "This effect adjusts state based on changes to props. Instead adjust the state during render based on prop changes: https://react.dev/learn/you-might-not-need-an-effect#adjusting-some-state-when-a-prop-changes",
+      "severity": "ERROR"
+    }
+  ]
+}
+"
+`;
+
+exports[`noEffectSetStateOnPropChange matches invalid fixture: withState.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": [
+    {
+      "code": {
+        "value": "plugin"
+      },
+      "location": {
+        "path": "src/react-effect/__tests__/fixtures/noEffectSetStateOnPropChange/invalid/withState.tsx",
+        "range": {
+          "end": {
+            "column": 27,
+            "line": 9
+          },
+          "start": {
+            "column": 2,
+            "line": 7
+          }
+        }
+      },
+      "message": "This effect adjusts state based on changes to props. Instead adjust the state during render based on prop changes: https://react.dev/learn/you-might-not-need-an-effect#adjusting-some-state-when-a-prop-changes",
+      "severity": "ERROR"
+    }
+  ]
+}
+"
+`;
+
+exports[`noEffectSetStateOnPropChange matches valid fixture: withLiteral.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": []
+}
+"
+`;

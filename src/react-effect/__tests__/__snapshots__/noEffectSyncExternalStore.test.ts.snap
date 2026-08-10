@@ -1,0 +1,151 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`noEffectSyncExternalStore matches invalid fixture: reactDocsExample.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": [
+    {
+      "code": {
+        "value": "plugin"
+      },
+      "location": {
+        "path": "src/react-effect/__tests__/fixtures/noEffectSyncExternalStore/invalid/reactDocsExample.tsx",
+        "range": {
+          "end": {
+            "column": 8,
+            "line": 19
+          },
+          "start": {
+            "column": 2,
+            "line": 6
+          }
+        }
+      },
+      "message": "This effect subscribes to an external store. The \`useSyncExternalStore\` hook is better suited for this use case, as it correctly handles concurrent and server rendering: https://react.dev/learn/you-might-not-need-an-effect#subscribing-to-an-external-store",
+      "severity": "ERROR"
+    }
+  ]
+}
+"
+`;
+
+exports[`noEffectSyncExternalStore matches invalid fixture: withDerivedSetter.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": [
+    {
+      "code": {
+        "value": "plugin"
+      },
+      "location": {
+        "path": "src/react-effect/__tests__/fixtures/noEffectSyncExternalStore/invalid/withDerivedSetter.tsx",
+        "range": {
+          "end": {
+            "column": 8,
+            "line": 15
+          },
+          "start": {
+            "column": 2,
+            "line": 7
+          }
+        }
+      },
+      "message": "This effect subscribes to an external store. The \`useSyncExternalStore\` hook is better suited for this use case, as it correctly handles concurrent and server rendering: https://react.dev/learn/you-might-not-need-an-effect#subscribing-to-an-external-store",
+      "severity": "ERROR"
+    }
+  ]
+}
+"
+`;
+
+exports[`noEffectSyncExternalStore matches invalid fixture: withMixedDerivedCalls.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": [
+    {
+      "code": {
+        "value": "plugin"
+      },
+      "location": {
+        "path": "src/react-effect/__tests__/fixtures/noEffectSyncExternalStore/invalid/withMixedDerivedCalls.tsx",
+        "range": {
+          "end": {
+            "column": 8,
+            "line": 12
+          },
+          "start": {
+            "column": 2,
+            "line": 8
+          }
+        }
+      },
+      "message": "This effect subscribes to an external store. The \`useSyncExternalStore\` hook is better suited for this use case, as it correctly handles concurrent and server rendering: https://react.dev/learn/you-might-not-need-an-effect#subscribing-to-an-external-store",
+      "severity": "ERROR"
+    }
+  ]
+}
+"
+`;
+
+exports[`noEffectSyncExternalStore matches invalid fixture: withSetterInCleanup.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": [
+    {
+      "code": {
+        "value": "plugin"
+      },
+      "location": {
+        "path": "src/react-effect/__tests__/fixtures/noEffectSyncExternalStore/invalid/withSetterInCleanup.tsx",
+        "range": {
+          "end": {
+            "column": 8,
+            "line": 9
+          },
+          "start": {
+            "column": 2,
+            "line": 6
+          }
+        }
+      },
+      "message": "This effect subscribes to an external store. The \`useSyncExternalStore\` hook is better suited for this use case, as it correctly handles concurrent and server rendering: https://react.dev/learn/you-might-not-need-an-effect#subscribing-to-an-external-store",
+      "severity": "ERROR"
+    }
+  ]
+}
+"
+`;
+
+exports[`noEffectSyncExternalStore matches valid fixture: withNoSyncSetter.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": []
+}
+"
+`;
+
+exports[`noEffectSyncExternalStore matches valid fixture: withRegularEffect.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": []
+}
+"
+`;

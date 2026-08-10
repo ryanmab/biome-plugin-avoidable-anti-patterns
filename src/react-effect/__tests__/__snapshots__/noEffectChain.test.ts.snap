@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`noEffectChain matches invalid fixture: reactDocsExample.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": [
+    {
+      "code": {
+        "value": "plugin"
+      },
+      "location": {
+        "path": "src/react-effect/__tests__/fixtures/noEffectChain/invalid/reactDocsExample.tsx",
+        "range": {
+          "end": {
+            "column": 21,
+            "line": 21
+          },
+          "start": {
+            "column": 2,
+            "line": 16
+          }
+        }
+      },
+      "message": "This effect's dependencies include state set by another effect, forming a chain of computations. Consider calculating both values during an event listener if approprie, or a single effect if mount is important: https://react.dev/learn/you-might-not-need-an-effect#chains-of-computations",
+      "severity": "ERROR"
+    },
+    {
+      "code": {
+        "value": "plugin"
+      },
+      "location": {
+        "path": "src/react-effect/__tests__/fixtures/noEffectChain/invalid/reactDocsExample.tsx",
+        "range": {
+          "end": {
+            "column": 13,
+            "line": 27
+          },
+          "start": {
+            "column": 2,
+            "line": 23
+          }
+        }
+      },
+      "message": "This effect's dependencies include state set by another effect, forming a chain of computations. Consider calculating both values during an event listener if approprie, or a single effect if mount is important: https://react.dev/learn/you-might-not-need-an-effect#chains-of-computations",
+      "severity": "ERROR"
+    },
+    {
+      "code": {
+        "value": "plugin"
+      },
+      "location": {
+        "path": "src/react-effect/__tests__/fixtures/noEffectChain/invalid/reactDocsExample.tsx",
+        "range": {
+          "end": {
+            "column": 18,
+            "line": 31
+          },
+          "start": {
+            "column": 2,
+            "line": 29
+          }
+        }
+      },
+      "message": "This effect's dependencies include state set by another effect, forming a chain of computations. Consider calculating both values during an event listener if approprie, or a single effect if mount is important: https://react.dev/learn/you-might-not-need-an-effect#chains-of-computations",
+      "severity": "ERROR"
+    }
+  ]
+}
+"
+`;
+
+exports[`noEffectChain matches valid fixture: withDerivedState.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": []
+}
+"
+`;
+
+exports[`noEffectChain matches valid fixture: withLiteral.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": []
+}
+"
+`;

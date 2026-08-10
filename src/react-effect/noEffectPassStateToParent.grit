@@ -1,0 +1,53 @@
+language js
+
+`useEffect(() => { $body }, $...)` as $effect where {
+	// Effect is inside a component
+	$effect <: within or {
+		JsFunctionDeclaration(parameters=$params, body=JsFunctionBody(statements=$stmts)),
+		JsArrowFunctionExpression(parameters=$params, body=JsFunctionBody(statements=$stmts))
+	} ,
+	any {
+		// State used in variables, which are then passed to parent
+		$stmts <: contains JsReferenceIdentifier() as $reference where {
+			$reference <: within JsVariableDeclarator(id=$variable_declaration) where {
+				// State defined in the component is set in the body of the effect
+				// (top-level only)
+				$body <: [
+					...,
+
+					JsExpressionStatement(expression=`$callback($args)`),
+
+					...
+				] where {
+					$stmts <: contains or {
+						`const [$reference, $_] = useState($...)`,
+						`const [$reference, $_] = useState<$t>($...)`
+					},
+					$params <: contains `$callback`,
+					$args <: contains $variable_declaration
+				}
+			}
+		},
+		// State directly passed to parent
+		$body <: contains JsReferenceIdentifier() as $reference where {
+			// State defined in the component is set in the body of the effect
+			// (top-level only)
+			$body <: [
+				...,
+
+				JsExpressionStatement(expression=`$callback($args)`),
+
+				...
+			] where {
+				$reference <: within $args where {
+					$stmts <: contains or {
+						`const [$reference, $_] = useState($...)`,
+						`const [$reference, $_] = useState<$t>($...)`
+					},
+					$params <: contains $callback
+				}
+			}
+		}
+	},
+	register_diagnostic(span=$effect, severity="error", message="This effect notifies a parent callback when local state changes. Call the parent'ss callback from the same event handler that sets the callback instead: https://react.dev/learn/you-might-not-need-an-effect#passing-data-to-the-parent")
+}

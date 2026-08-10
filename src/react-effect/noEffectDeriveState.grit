@@ -1,0 +1,71 @@
+language js
+
+`useEffect(() => { $body }, $...)` as $effect where {
+	// Effect is inside a component
+	$effect <: within or {
+		JsFunctionDeclaration(parameters=$params, body=JsFunctionBody(statements=$stmts)),
+		JsArrowFunctionExpression(parameters=$params, body=JsFunctionBody(statements=$stmts))
+	} ,
+	any {
+		// State or arguments used in variables, which are then used in state
+		$stmts <: contains JsReferenceIdentifier() as $reference where {
+			$reference <: within JsVariableDeclarator(id=$variableDeclaration) where {
+				// State defined in the component is set in the body of the effect
+				// (top-level only)
+				$body <: [
+					...,
+
+					JsExpressionStatement(expression=`$setter($args)`),
+
+					...
+				] where {
+					$stmts <: contains or {
+						`const [$_, $setter] = useState($...)`,
+						`const [$_, $setter] = useState<$t>($...)`
+					},
+					$args <: contains $variableDeclaration
+				},
+				or {
+					$params <: contains $reference,
+					{
+						$stmts <: contains or {
+							`const [$reference, $otherSetter] = useState($...)`,
+							`const [$reference, $otherSetter] = useState<$t>($...)`
+						},
+						$setter <: not $otherSetter
+					}
+				}
+			}
+		},
+		// State or arguments used directly in state
+		$body <: contains JsReferenceIdentifier() as $reference where {
+			// State defined in the component is set in the body of the effect
+			// (top-level only)
+			$body <: [
+				...,
+
+				JsExpressionStatement(expression=`$setter($args)`),
+
+				...
+			] where {
+				$reference <: within $args where {
+					$stmts <: contains or {
+						`const [$_, $setter] = useState($_)`,
+						`const [$_, $setter] = useState<$t>($_)`
+					},
+					or {
+						$params <: contains $reference,
+						{
+							$stmts <: contains or {
+								`const [$reference, $otherSetter] = useState($...)`,
+								`const [$reference, $otherSetter] = useState<$t>($...)`
+							},
+							$setter <: not $otherSetter
+						}
+					}
+				}
+			}
+		}
+	},
+	register_diagnostic(span=$effect, severity="error", message="This effect adjusts state based on arguments or other state. Instead adjust the state during render based on prop changes: https://react.dev/learn/you-might-not-need-an-effect#adjusting-some-state-when-a-prop-changes")
+}

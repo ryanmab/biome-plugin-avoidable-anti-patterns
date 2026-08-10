@@ -1,0 +1,31 @@
+import { useEffect, useState } from "react";
+
+const submitData = (data: unknown) => {};
+
+function Form() {
+	const [name, setName] = useState<string>();
+	const [dataToSubmit, setDataToSubmit] = useState<{
+		name: string | undefined;
+	}>({
+		name: "",
+	});
+
+	useEffect(() => {
+		if (dataToSubmit.name && dataToSubmit.name.length > 0) {
+			submitData(dataToSubmit);
+		}
+	}, [dataToSubmit]);
+
+	return (
+		<div>
+			<input
+				name="name"
+				type="text"
+				onChange={(e) => setName(e.target.value)}
+			/>
+			<button type="button" onClick={() => setDataToSubmit({ name })}>
+				Submit
+			</button>
+		</div>
+	);
+}

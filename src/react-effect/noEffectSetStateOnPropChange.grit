@@ -1,0 +1,25 @@
+language js
+
+`useEffect(() => { $body }, $deps)` as $effect where {
+	$body <: not [
+		...,
+
+		JsReturnStatement()
+	],
+	$effect <: within or {
+		JsFunctionDeclaration(body=$stmts, parameters=$params),
+		JsArrowFunctionExpression(body=$stmts, parameters=$params)
+	} ,
+	$stmts <: contains {
+		or {
+			`const [$_, $setter] = useState($...)`,
+			`const [$_, $setter] = useState<$_>($...)`
+		} where {
+			$body <: contains `$setter($...)`,
+			$deps <: contains JsIdentifierExpression(name=$dep) where {
+				$params <: contains $dep
+			}
+		}
+	},
+	register_diagnostic(span=$effect, severity="error", message="This effect adjusts state based on changes to props. Instead adjust the state during render based on prop changes: https://react.dev/learn/you-might-not-need-an-effect#adjusting-some-state-when-a-prop-changes")
+}

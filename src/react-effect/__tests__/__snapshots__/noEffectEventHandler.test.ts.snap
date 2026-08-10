@@ -1,0 +1,204 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`noEffectEventEventHandler matches invalid fixture: reactDocsExample.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": [
+    {
+      "code": {
+        "value": "plugin"
+      },
+      "location": {
+        "path": "src/react-effect/__tests__/fixtures/noEffectEventHandler/invalid/reactDocsExample.tsx",
+        "range": {
+          "end": {
+            "column": 15,
+            "line": 23
+          },
+          "start": {
+            "column": 2,
+            "line": 19
+          }
+        }
+      },
+      "message": "This effect is used with state or props to mimic an event handler. Put this logic in the event handler which modifies the state or props, where you know what the user actually did: https://react.dev/learn/you-might-not-need-an-effect#sending-a-post-request",
+      "severity": "ERROR"
+    }
+  ]
+}
+"
+`;
+
+exports[`noEffectEventEventHandler matches invalid fixture: withDerivedProp.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": [
+    {
+      "code": {
+        "value": "plugin"
+      },
+      "location": {
+        "path": "src/react-effect/__tests__/fixtures/noEffectEventHandler/invalid/withDerivedProp.tsx",
+        "range": {
+          "end": {
+            "column": 15,
+            "line": 9
+          },
+          "start": {
+            "column": 2,
+            "line": 6
+          }
+        }
+      },
+      "message": "This effect is used with state or props to mimic an event handler. Put this logic in the event handler which modifies the state or props, where you know what the user actually did: https://react.dev/learn/you-might-not-need-an-effect#sending-a-post-request",
+      "severity": "ERROR"
+    }
+  ]
+}
+"
+`;
+
+exports[`noEffectEventEventHandler matches invalid fixture: withEarlyReturn.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": [
+    {
+      "code": {
+        "value": "plugin"
+      },
+      "location": {
+        "path": "src/react-effect/__tests__/fixtures/noEffectEventHandler/invalid/withEarlyReturn.tsx",
+        "range": {
+          "end": {
+            "column": 20,
+            "line": 13
+          },
+          "start": {
+            "column": 2,
+            "line": 9
+          }
+        }
+      },
+      "message": "This effect is used with state or props to mimic an event handler. Put this logic in the event handler which modifies the state or props, where you know what the user actually did: https://react.dev/learn/you-might-not-need-an-effect#sending-a-post-request",
+      "severity": "ERROR"
+    }
+  ]
+}
+"
+`;
+
+exports[`noEffectEventEventHandler matches invalid fixture: withMemberAccess.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": [
+    {
+      "code": {
+        "value": "plugin"
+      },
+      "location": {
+        "path": "src/react-effect/__tests__/fixtures/noEffectEventHandler/invalid/withMemberAccess.tsx",
+        "range": {
+          "end": {
+            "column": 20,
+            "line": 17
+          },
+          "start": {
+            "column": 2,
+            "line": 13
+          }
+        }
+      },
+      "message": "This effect is used with state or props to mimic an event handler. Put this logic in the event handler which modifies the state or props, where you know what the user actually did: https://react.dev/learn/you-might-not-need-an-effect#sending-a-post-request",
+      "severity": "ERROR"
+    }
+  ]
+}
+"
+`;
+
+exports[`noEffectEventEventHandler matches invalid fixture: withMixture.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": [
+    {
+      "code": {
+        "value": "plugin"
+      },
+      "location": {
+        "path": "src/react-effect/__tests__/fixtures/noEffectEventHandler/invalid/withMixture.tsx",
+        "range": {
+          "end": {
+            "column": 20,
+            "line": 13
+          },
+          "start": {
+            "column": 2,
+            "line": 9
+          }
+        }
+      },
+      "message": "This effect is used with state or props to mimic an event handler. Put this logic in the event handler which modifies the state or props, where you know what the user actually did: https://react.dev/learn/you-might-not-need-an-effect#sending-a-post-request",
+      "severity": "ERROR"
+    }
+  ]
+}
+"
+`;
+
+exports[`noEffectEventEventHandler matches invalid fixture: withState.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": [
+    {
+      "code": {
+        "value": "plugin"
+      },
+      "location": {
+        "path": "src/react-effect/__tests__/fixtures/noEffectEventHandler/invalid/withState.tsx",
+        "range": {
+          "end": {
+            "column": 20,
+            "line": 13
+          },
+          "start": {
+            "column": 2,
+            "line": 9
+          }
+        }
+      },
+      "message": "This effect is used with state or props to mimic an event handler. Put this logic in the event handler which modifies the state or props, where you know what the user actually did: https://react.dev/learn/you-might-not-need-an-effect#sending-a-post-request",
+      "severity": "ERROR"
+    }
+  ]
+}
+"
+`;
+
+exports[`noEffectEventEventHandler matches valid fixture: withDerivedFromCalledFunction.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": []
+}
+"
+`;

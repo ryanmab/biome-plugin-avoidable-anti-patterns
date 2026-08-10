@@ -1,0 +1,23 @@
+language js
+
+`useEffect(() => { $body }, $deps)` as $effect where {
+	// Effect is inside a component
+	$effect <: within JsFunctionBody(statements=$stmts) ,
+	$stmts <: contains or {
+		`const [$state, $setter] = useState($_)`,
+		`const [$state, $setter] = useState<$t>($_)`
+	} where {
+		// State defined in the component is set in the body of the effect
+		// (top-level only)
+		$body <: [
+			...,
+
+			JsExpressionStatement(expression=`$setter($...)`),
+
+			...
+		],
+		// Effect has no other dependencies
+		or { $deps <: `[]`, $deps <: `[$setter]`, $deps <: `.` }
+	},
+	register_diagnostic(span=$effect, severity="error", message="This effect initialises state on mount. You should initialise the state during render instead: https://tkdodo.eu/blog/avoiding-hydration-mismatches-with-use-sync-external-store")
+}

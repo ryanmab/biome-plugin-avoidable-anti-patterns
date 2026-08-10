@@ -1,0 +1,7 @@
+language js
+
+`useEffect(() => { $body }, $...);` as $effect where {
+	$body <: .,
+	register_diagnostic(span=$effect, severity="error", message="This effect is has no body, and so can be removed."),
+	$effect => .
+}

@@ -1,0 +1,215 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`noEffectResetState matches invalid fixture: reactDocsExample.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": [
+    {
+      "code": {
+        "value": "plugin"
+      },
+      "location": {
+        "path": "src/react-effect/__tests__/fixtures/noEffectResetState/invalid/reactDocsExample.tsx",
+        "range": {
+          "end": {
+            "column": 14,
+            "line": 9
+          },
+          "start": {
+            "column": 2,
+            "line": 7
+          }
+        }
+      },
+      "message": "This effect resets state back to its initial value when a dependency changes. Resetting all state on a prop change is usually better expressed as a \`key\` prop on the component: https://react.dev/learn/you-might-not-need-an-effect#resetting-all-state-when-a-prop-changes",
+      "severity": "ERROR"
+    }
+  ]
+}
+"
+`;
+
+exports[`noEffectResetState matches invalid fixture: withFunctionReturn.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": [
+    {
+      "code": {
+        "value": "plugin"
+      },
+      "location": {
+        "path": "src/react-effect/__tests__/fixtures/noEffectResetState/invalid/withFunctionReturn.tsx",
+        "range": {
+          "end": {
+            "column": 14,
+            "line": 10
+          },
+          "start": {
+            "column": 2,
+            "line": 8
+          }
+        }
+      },
+      "message": "This effect resets state back to its initial value when a dependency changes. Resetting all state on a prop change is usually better expressed as a \`key\` prop on the component: https://react.dev/learn/you-might-not-need-an-effect#resetting-all-state-when-a-prop-changes",
+      "severity": "ERROR"
+    }
+  ]
+}
+"
+`;
+
+exports[`noEffectResetState matches invalid fixture: withMultipleResets.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": [
+    {
+      "code": {
+        "value": "plugin"
+      },
+      "location": {
+        "path": "src/react-effect/__tests__/fixtures/noEffectResetState/invalid/withMultipleResets.tsx",
+        "range": {
+          "end": {
+            "column": 14,
+            "line": 10
+          },
+          "start": {
+            "column": 2,
+            "line": 7
+          }
+        }
+      },
+      "message": "This effect resets state back to its initial value when a dependency changes. Resetting all state on a prop change is usually better expressed as a \`key\` prop on the component: https://react.dev/learn/you-might-not-need-an-effect#resetting-all-state-when-a-prop-changes",
+      "severity": "ERROR"
+    }
+  ]
+}
+"
+`;
+
+exports[`noEffectResetState matches invalid fixture: withUndefined.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": [
+    {
+      "code": {
+        "value": "plugin"
+      },
+      "location": {
+        "path": "src/react-effect/__tests__/fixtures/noEffectResetState/invalid/withUndefined.tsx",
+        "range": {
+          "end": {
+            "column": 14,
+            "line": 9
+          },
+          "start": {
+            "column": 2,
+            "line": 6
+          }
+        }
+      },
+      "message": "This effect resets state back to its initial value when a dependency changes. Resetting all state on a prop change is usually better expressed as a \`key\` prop on the component: https://react.dev/learn/you-might-not-need-an-effect#resetting-all-state-when-a-prop-changes",
+      "severity": "ERROR"
+    }
+  ]
+}
+"
+`;
+
+exports[`noEffectResetState matches invalid fixture: withUndefinedDefault.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": [
+    {
+      "code": {
+        "value": "plugin"
+      },
+      "location": {
+        "path": "src/react-effect/__tests__/fixtures/noEffectResetState/invalid/withUndefinedDefault.tsx",
+        "range": {
+          "end": {
+            "column": 13,
+            "line": 8
+          },
+          "start": {
+            "column": 2,
+            "line": 6
+          }
+        }
+      },
+      "message": "This effect resets state back to its initial value when a dependency changes. Resetting all state on a prop change is usually better expressed as a \`key\` prop on the component: https://react.dev/learn/you-might-not-need-an-effect#resetting-all-state-when-a-prop-changes",
+      "severity": "ERROR"
+    }
+  ]
+}
+"
+`;
+
+exports[`noEffectResetState matches invalid fixture: withUndefinedSetter.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": [
+    {
+      "code": {
+        "value": "plugin"
+      },
+      "location": {
+        "path": "src/react-effect/__tests__/fixtures/noEffectResetState/invalid/withUndefinedSetter.tsx",
+        "range": {
+          "end": {
+            "column": 14,
+            "line": 9
+          },
+          "start": {
+            "column": 2,
+            "line": 6
+          }
+        }
+      },
+      "message": "This effect resets state back to its initial value when a dependency changes. Resetting all state on a prop change is usually better expressed as a \`key\` prop on the component: https://react.dev/learn/you-might-not-need-an-effect#resetting-all-state-when-a-prop-changes",
+      "severity": "ERROR"
+    }
+  ]
+}
+"
+`;
+
+exports[`noEffectResetState matches valid fixture: viaIffe.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": []
+}
+"
+`;
+
+exports[`noEffectResetState matches valid fixture: withDifferentValue.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": []
+}
+"
+`;

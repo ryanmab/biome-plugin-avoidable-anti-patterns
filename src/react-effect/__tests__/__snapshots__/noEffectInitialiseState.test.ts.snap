@@ -1,0 +1,237 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`noEffectInitialiseState matches invalid fixture: reactDocsExample.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": [
+    {
+      "code": {
+        "value": "plugin"
+      },
+      "location": {
+        "path": "src/react-effect/__tests__/fixtures/noEffectInitialiseState/invalid/reactDocsExample.tsx",
+        "range": {
+          "end": {
+            "column": 8,
+            "line": 9
+          },
+          "start": {
+            "column": 2,
+            "line": 6
+          }
+        }
+      },
+      "message": "This effect initialises state on mount. You should initialise the state during render instead: https://tkdodo.eu/blog/avoiding-hydration-mismatches-with-use-sync-external-store",
+      "severity": "ERROR"
+    }
+  ]
+}
+"
+`;
+
+exports[`noEffectInitialiseState matches invalid fixture: withEquivilentState.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": [
+    {
+      "code": {
+        "value": "plugin"
+      },
+      "location": {
+        "path": "src/react-effect/__tests__/fixtures/noEffectInitialiseState/invalid/withEquivilentState.tsx",
+        "range": {
+          "end": {
+            "column": 8,
+            "line": 11
+          },
+          "start": {
+            "column": 2,
+            "line": 7
+          }
+        }
+      },
+      "message": "This effect initialises state on mount. You should initialise the state during render instead: https://tkdodo.eu/blog/avoiding-hydration-mismatches-with-use-sync-external-store",
+      "severity": "ERROR"
+    }
+  ]
+}
+"
+`;
+
+exports[`noEffectInitialiseState matches invalid fixture: withOtherState.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": [
+    {
+      "code": {
+        "value": "plugin"
+      },
+      "location": {
+        "path": "src/react-effect/__tests__/fixtures/noEffectInitialiseState/invalid/withOtherState.tsx",
+        "range": {
+          "end": {
+            "column": 8,
+            "line": 9
+          },
+          "start": {
+            "column": 2,
+            "line": 7
+          }
+        }
+      },
+      "message": "This effect initialises state on mount. You should initialise the state during render instead: https://tkdodo.eu/blog/avoiding-hydration-mismatches-with-use-sync-external-store",
+      "severity": "ERROR"
+    }
+  ]
+}
+"
+`;
+
+exports[`noEffectInitialiseState matches invalid fixture: withSetterDependency.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": [
+    {
+      "code": {
+        "value": "plugin"
+      },
+      "location": {
+        "path": "src/react-effect/__tests__/fixtures/noEffectInitialiseState/invalid/withSetterDependency.tsx",
+        "range": {
+          "end": {
+            "column": 16,
+            "line": 8
+          },
+          "start": {
+            "column": 2,
+            "line": 6
+          }
+        }
+      },
+      "message": "This effect initialises state on mount. You should initialise the state during render instead: https://tkdodo.eu/blog/avoiding-hydration-mismatches-with-use-sync-external-store",
+      "severity": "ERROR"
+    }
+  ]
+}
+"
+`;
+
+exports[`noEffectInitialiseState matches invalid fixture: withSurroundingStatements.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": [
+    {
+      "code": {
+        "value": "plugin"
+      },
+      "location": {
+        "path": "src/react-effect/__tests__/fixtures/noEffectInitialiseState/invalid/withSurroundingStatements.tsx",
+        "range": {
+          "end": {
+            "column": 8,
+            "line": 10
+          },
+          "start": {
+            "column": 2,
+            "line": 6
+          }
+        }
+      },
+      "message": "This effect initialises state on mount. You should initialise the state during render instead: https://tkdodo.eu/blog/avoiding-hydration-mismatches-with-use-sync-external-store",
+      "severity": "ERROR"
+    }
+  ]
+}
+"
+`;
+
+exports[`noEffectInitialiseState matches invalid fixture: withUndefined.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": [
+    {
+      "code": {
+        "value": "plugin"
+      },
+      "location": {
+        "path": "src/react-effect/__tests__/fixtures/noEffectInitialiseState/invalid/withUndefined.tsx",
+        "range": {
+          "end": {
+            "column": 8,
+            "line": 9
+          },
+          "start": {
+            "column": 2,
+            "line": 6
+          }
+        }
+      },
+      "message": "This effect initialises state on mount. You should initialise the state during render instead: https://tkdodo.eu/blog/avoiding-hydration-mismatches-with-use-sync-external-store",
+      "severity": "ERROR"
+    }
+  ]
+}
+"
+`;
+
+exports[`noEffectInitialiseState matches valid fixture: viaCallback.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": []
+}
+"
+`;
+
+exports[`noEffectInitialiseState matches valid fixture: viaIffe.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": []
+}
+"
+`;
+
+exports[`noEffectInitialiseState matches valid fixture: viaPromise.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": []
+}
+"
+`;
+
+exports[`noEffectInitialiseState matches valid fixture: withDependency.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": []
+}
+"
+`;

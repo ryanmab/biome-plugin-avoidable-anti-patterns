@@ -1,0 +1,26 @@
+{
+    "name": "@ryanmab/biome-plugin-avoidable-anti-patterns",
+    "version": "0.0.1",
+    "description": "A collection of opinionated Biome rules for identifying and avoiding common code anti-patterns.",
+    "license": "MIT",
+    "author": "Ryan Maber",
+    "type": "module",
+    "scripts": {
+        "lint": "biome lint",
+        "format": "biome format",
+        "test": "NODE_OPTIONS=--experimental-vm-modules NODE_NO_WARNINGS=1 jest"
+    },
+    "devDependencies": {
+        "@biomejs/biome": "^2.5.6",
+        "@jest/globals": "^30.4.1",
+        "@types/react": "^19.2.18",
+        "glob": "^13.0.6",
+        "jest": "^30.4.2",
+        "react": "^19.2.8",
+        "ts-jest": "^29.4.12",
+        "typescript": "^6.0.3"
+    },
+    "peerDependencies": {
+        "@biomejs/biome": "^2"
+    }
+}

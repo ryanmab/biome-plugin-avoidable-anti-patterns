@@ -1,0 +1,16 @@
+language js
+
+`useEffect(() => { $body_b }, $deps_b)` as $effect_b where {
+	$effect_b <: within JsFunctionBody(statements=$stmts) ,
+	$stmts <: contains or {
+		`const [$state, $setter] = useState($_)`,
+		`const [$state, $setter] = useState<$t>($_)`
+	} where {
+		$stmts <: contains `useEffect(() => { $body_a }, $deps_a)` as $effect_a where {
+			not $effect_a <: $effect_b,
+			$body_a <: contains `$setter($_)`
+		},
+		$deps_b <: contains `$state`
+	},
+	register_diagnostic(span=$effect_b, severity="error", message="This effect's dependencies include state set by another effect, forming a chain of computations. Consider calculating both values during an event listener if approprie, or a single effect if mount is important: https://react.dev/learn/you-might-not-need-an-effect#chains-of-computations")
+}

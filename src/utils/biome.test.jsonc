@@ -1,0 +1,74 @@
+{
+	"files": {
+		"includes": ["**/__tests__/fixtures/**/*.{j,t}s{x,}"]
+	},
+	"linter": {
+		"rules": {
+			"preset": "none"
+		}
+	},
+	"plugins": [
+		{
+			"path": "../react-effect/noEffectSetStateOnPropChange.grit",
+			"includes": [
+				"**/__tests__/fixtures/**/noEffectSetStateOnPropChange/**/*.{j,t}s{x,}"
+			]
+		},
+		{
+			"path": "../react-effect/noEffectInitialiseState.grit",
+			"includes": [
+				"**/__tests__/fixtures/**/noEffectInitialiseState/**/*.{j,t}s{x,}"
+			]
+		},
+		{
+			"path": "../react-effect/noEffectDeriveState.grit",
+			"includes": [
+				"**/__tests__/fixtures/**/noEffectDeriveState/**/*.{j,t}s{x,}"
+			]
+		},
+		{
+			"path": "../react-effect/noEffectChain.grit",
+			"includes": ["**/__tests__/fixtures/**/noEffectChain/**/*.{j,t}s{x,}"]
+		},
+		{
+			"path": "../react-effect/noEffectFetchWithoutCleanup.grit",
+			"includes": [
+				"**/__tests__/fixtures/**/noEffectFetchWithoutCleanup/**/*.{j,t}s{x,}"
+			]
+		},
+		{
+			"path": "../react-effect/noEffectPassStateToParent.grit",
+			"includes": [
+				"**/__tests__/fixtures/**/noEffectPassStateToParent/**/*.{j,t}s{x,}"
+			]
+		},
+		{
+			"path": "../react-effect/noEffectEventHandler.grit",
+			"includes": [
+				"**/__tests__/fixtures/**/noEffectEventHandler/**/*.{j,t}s{x,}"
+			]
+		},
+		{
+			"path": "../react-effect/noEffectResetState.grit",
+			"includes": [
+				"**/__tests__/fixtures/**/noEffectResetState/**/*.{j,t}s{x,}"
+			]
+		},
+		{
+			"path": "../react-effect/noEffectSyncExternalStore.grit",
+			"includes": [
+				"**/__tests__/fixtures/**/noEffectSyncExternalStore/**/*.{j,t}s{x,}"
+			]
+		},
+		{
+			"path": "../react-effect/noEffectEmpty.grit",
+			"includes": ["**/__tests__/fixtures/**/noEffectEmpty/**/*.{j,t}s{x,}"]
+		},
+		{
+			"path": "../react-effect/noEffectManageParent.grit",
+			"includes": [
+				"**/__tests__/fixtures/**/noEffectManageParent/**/*.{j,t}s{x,}"
+			]
+		}
+	]
+}

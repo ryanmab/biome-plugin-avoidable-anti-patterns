@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`noEffectEmpty matches fixture: empty.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": [
+    {
+      "code": {
+        "value": "plugin"
+      },
+      "location": {
+        "path": "src/react-effect/__tests__/fixtures/noEffectEmpty/empty.tsx",
+        "range": {
+          "end": {
+            "column": 26,
+            "line": 7
+          },
+          "start": {
+            "column": 2,
+            "line": 7
+          }
+        }
+      },
+      "message": "This effect is has no body, and so can be removed.",
+      "severity": "ERROR",
+      "suggestions": [
+        {
+          "range": {
+            "end": {
+              "column": 14,
+              "line": 11
+            },
+            "start": {
+              "column": 2,
+              "line": 7
+            }
+          },
+          "text": "\\n\\n\\t"
+        }
+      ]
+    },
+    {
+      "code": {
+        "value": "plugin"
+      },
+      "location": {
+        "path": "src/react-effect/__tests__/fixtures/noEffectEmpty/empty.tsx",
+        "range": {
+          "end": {
+            "column": 14,
+            "line": 11
+          },
+          "start": {
+            "column": 2,
+            "line": 9
+          }
+        }
+      },
+      "message": "This effect is has no body, and so can be removed.",
+      "severity": "ERROR"
+    }
+  ]
+}
+"
+`;

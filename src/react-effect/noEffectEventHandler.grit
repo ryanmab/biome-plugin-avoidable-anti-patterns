@@ -1,0 +1,58 @@
+language js
+
+`useEffect(() => { $body }, $...)` as $effect where {
+	$effect <: within or {
+		JsFunctionDeclaration(body=$stmts, parameters=$params),
+		JsArrowFunctionExpression(body=$stmts, parameters=$params)
+	} ,
+	any {
+		// State or arguments used in variables, which are then used in branches
+		$stmts <: contains JsReferenceIdentifier() as $reference where {
+			$reference <: within JsVariableDeclarator(id=$variable_declaration) where {
+				// Cannot make any assumptions as to the use of the reference in a call to another
+				// function, and so, ignore any references which are arguments of a function
+				// (i.e. `if (callSomething($state)) { ... }`).
+				//
+				// This _will_ cause false negatives as it becomes possible to hide event logic behind
+				// a function of some kind, but there are plenty of use cases which use this pattern
+				// that shouldn't be flagged by this lint.
+				$reference <: not within `$_($..., $reference, $...)` ,
+				$body <: contains JsIfStatement(test=$test) where {
+					$test <: contains $variable_declaration
+				},
+				or {
+					$params <: contains $reference,
+					{
+						$stmts <: contains or {
+							`const [$reference, $_] = useState($...)`,
+							`const [$reference, $_] = useState<$t>($...)`
+						}
+					}
+				}
+			}
+		},
+		// State or arguments used directly in branches
+		$body <: contains JsReferenceIdentifier() as $reference where {
+			// Cannot make any assumptions as to the use of the reference in a call to another
+			// function, and so, ignore any references which are arguments of a function
+			// (i.e. `if (callSomething($state)) { ... }`).
+			//
+			// This _will_ cause false negatives as it becomes possible to hide event logic behind
+			// a function of some kind, but there are plenty of use cases which use this pattern
+			// that shouldn't be flagged by this lint.
+			$reference <: not within `$_($..., $reference, $...)` ,
+			$reference <: within JsIfStatement(test=$test) where {
+				or {
+					$params <: contains $reference,
+					{
+						$stmts <: contains or {
+							`const [$reference, $_] = useState($...)`,
+							`const [$reference, $_] = useState<$t>($...)`
+						}
+					}
+				}
+			}
+		}
+	},
+	register_diagnostic(span=$effect, severity="error", message="This effect is used with state or props to mimic an event handler. Put this logic in the event handler which modifies the state or props, where you know what the user actually did: https://react.dev/learn/you-might-not-need-an-effect#sending-a-post-request")
+}

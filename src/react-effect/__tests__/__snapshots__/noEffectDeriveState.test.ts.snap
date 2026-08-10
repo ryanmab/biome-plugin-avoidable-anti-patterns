@@ -1,0 +1,280 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`noEffectDeriveState matches invalid fixture: fromArgument.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": [
+    {
+      "code": {
+        "value": "plugin"
+      },
+      "location": {
+        "path": "src/react-effect/__tests__/fixtures/noEffectDeriveState/invalid/fromArgument.tsx",
+        "range": {
+          "end": {
+            "column": 9,
+            "line": 8
+          },
+          "start": {
+            "column": 2,
+            "line": 6
+          }
+        }
+      },
+      "message": "This effect adjusts state based on arguments or other state. Instead adjust the state during render based on prop changes: https://react.dev/learn/you-might-not-need-an-effect#adjusting-some-state-when-a-prop-changes",
+      "severity": "ERROR"
+    }
+  ]
+}
+"
+`;
+
+exports[`noEffectDeriveState matches invalid fixture: fromConstOutsideEffect.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": [
+    {
+      "code": {
+        "value": "plugin"
+      },
+      "location": {
+        "path": "src/react-effect/__tests__/fixtures/noEffectDeriveState/invalid/fromConstOutsideEffect.tsx",
+        "range": {
+          "end": {
+            "column": 12,
+            "line": 11
+          },
+          "start": {
+            "column": 2,
+            "line": 9
+          }
+        }
+      },
+      "message": "This effect adjusts state based on arguments or other state. Instead adjust the state during render based on prop changes: https://react.dev/learn/you-might-not-need-an-effect#adjusting-some-state-when-a-prop-changes",
+      "severity": "ERROR"
+    }
+  ]
+}
+"
+`;
+
+exports[`noEffectDeriveState matches invalid fixture: fromMethodCall.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": [
+    {
+      "code": {
+        "value": "plugin"
+      },
+      "location": {
+        "path": "src/react-effect/__tests__/fixtures/noEffectDeriveState/invalid/fromMethodCall.tsx",
+        "range": {
+          "end": {
+            "column": 12,
+            "line": 8
+          },
+          "start": {
+            "column": 2,
+            "line": 6
+          }
+        }
+      },
+      "message": "This effect adjusts state based on arguments or other state. Instead adjust the state during render based on prop changes: https://react.dev/learn/you-might-not-need-an-effect#adjusting-some-state-when-a-prop-changes",
+      "severity": "ERROR"
+    }
+  ]
+}
+"
+`;
+
+exports[`noEffectDeriveState matches invalid fixture: fromMixture.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": [
+    {
+      "code": {
+        "value": "plugin"
+      },
+      "location": {
+        "path": "src/react-effect/__tests__/fixtures/noEffectDeriveState/invalid/fromMixture.tsx",
+        "range": {
+          "end": {
+            "column": 9,
+            "line": 10
+          },
+          "start": {
+            "column": 2,
+            "line": 8
+          }
+        }
+      },
+      "message": "This effect adjusts state based on arguments or other state. Instead adjust the state during render based on prop changes: https://react.dev/learn/you-might-not-need-an-effect#adjusting-some-state-when-a-prop-changes",
+      "severity": "ERROR"
+    }
+  ]
+}
+"
+`;
+
+exports[`noEffectDeriveState matches invalid fixture: fromProp.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": [
+    {
+      "code": {
+        "value": "plugin"
+      },
+      "location": {
+        "path": "src/react-effect/__tests__/fixtures/noEffectDeriveState/invalid/fromProp.tsx",
+        "range": {
+          "end": {
+            "column": 9,
+            "line": 8
+          },
+          "start": {
+            "column": 2,
+            "line": 6
+          }
+        }
+      },
+      "message": "This effect adjusts state based on arguments or other state. Instead adjust the state during render based on prop changes: https://react.dev/learn/you-might-not-need-an-effect#adjusting-some-state-when-a-prop-changes",
+      "severity": "ERROR"
+    }
+  ]
+}
+"
+`;
+
+exports[`noEffectDeriveState matches invalid fixture: fromSetterCallback.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": [
+    {
+      "code": {
+        "value": "plugin"
+      },
+      "location": {
+        "path": "src/react-effect/__tests__/fixtures/noEffectDeriveState/invalid/fromSetterCallback.tsx",
+        "range": {
+          "end": {
+            "column": 13,
+            "line": 8
+          },
+          "start": {
+            "column": 2,
+            "line": 6
+          }
+        }
+      },
+      "message": "This effect adjusts state based on arguments or other state. Instead adjust the state during render based on prop changes: https://react.dev/learn/you-might-not-need-an-effect#adjusting-some-state-when-a-prop-changes",
+      "severity": "ERROR"
+    }
+  ]
+}
+"
+`;
+
+exports[`noEffectDeriveState matches invalid fixture: reactDocsExample.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": [
+    {
+      "code": {
+        "value": "plugin"
+      },
+      "location": {
+        "path": "src/react-effect/__tests__/fixtures/noEffectDeriveState/invalid/reactDocsExample.tsx",
+        "range": {
+          "end": {
+            "column": 27,
+            "line": 12
+          },
+          "start": {
+            "column": 2,
+            "line": 10
+          }
+        }
+      },
+      "message": "This effect adjusts state based on arguments or other state. Instead adjust the state during render based on prop changes: https://react.dev/learn/you-might-not-need-an-effect#adjusting-some-state-when-a-prop-changes",
+      "severity": "ERROR"
+    }
+  ]
+}
+"
+`;
+
+exports[`noEffectDeriveState matches valid fixture: fromConst.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": []
+}
+"
+`;
+
+exports[`noEffectDeriveState matches valid fixture: fromInternalStateOnRender.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": []
+}
+"
+`;
+
+exports[`noEffectDeriveState matches valid fixture: fromPropsOnRender.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": []
+}
+"
+`;
+
+exports[`noEffectDeriveState matches valid fixture: fromRecursiveState.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": []
+}
+"
+`;
+
+exports[`noEffectDeriveState matches valid fixture: fromSetterCallback.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": []
+}
+"
+`;

@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`noEffectManageParent matches invalid fixture: withDerivedProps.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": [
+    {
+      "code": {
+        "value": "plugin"
+      },
+      "location": {
+        "path": "src/react-effect/__tests__/fixtures/noEffectManageParent/invalid/withDerivedProps.tsx",
+        "range": {
+          "end": {
+            "column": 38,
+            "line": 12
+          },
+          "start": {
+            "column": 2,
+            "line": 10
+          }
+        }
+      },
+      "message": "This effect contains exclusively dependencies which are props. This effect would be better expressed as additional logic on the parent event handler which changes the properties.",
+      "severity": "ERROR"
+    }
+  ]
+}
+"
+`;
+
+exports[`noEffectManageParent matches invalid fixture: withExclusivelyProps.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": [
+    {
+      "code": {
+        "value": "plugin"
+      },
+      "location": {
+        "path": "src/react-effect/__tests__/fixtures/noEffectManageParent/invalid/withExclusivelyProps.tsx",
+        "range": {
+          "end": {
+            "column": 26,
+            "line": 9
+          },
+          "start": {
+            "column": 2,
+            "line": 7
+          }
+        }
+      },
+      "message": "This effect contains exclusively dependencies which are props. This effect would be better expressed as additional logic on the parent event handler which changes the properties.",
+      "severity": "ERROR"
+    }
+  ]
+}
+"
+`;
+
+exports[`noEffectManageParent matches valid fixture: withMixture.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": []
+}
+"
+`;

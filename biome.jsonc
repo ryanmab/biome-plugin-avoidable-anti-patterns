@@ -1,0 +1,15 @@
+{
+	"files": {
+		"includes": [
+			"**/*.{j,t}s{x,}",
+			"**/*.json{c,}",
+			"**/*.grit",
+			"!**/__tests__/fixtures/**/*.{j,t}s{x,}"
+		]
+	},
+	"linter": {
+		"rules": {
+			"preset": "recommended"
+		}
+	}
+}

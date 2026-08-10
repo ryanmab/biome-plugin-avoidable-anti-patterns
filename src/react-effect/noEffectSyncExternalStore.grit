@@ -1,0 +1,100 @@
+language js
+
+`useEffect(() => { $body }, $...)` as $effect where {
+	// Effect runs a cleanup on unmount
+	$body <: or {
+		[
+			...,
+
+			JsReturnStatement(argument=JsArrowFunctionExpression(body=$cleanup))
+		],
+		[
+			...,
+
+			JsReturnStatement(argument=JsIdentifierExpression(name=$cleanup))
+		]
+	},
+	$effect <: within or {
+		JsFunctionDeclaration(body=$stmts, parameters=$params),
+		JsArrowFunctionExpression(body=$stmts, parameters=$params)
+	} ,
+	$stmts <: contains or {
+		`const [$_, $setter] = useState($...)`,
+		`const [$_, $setter] = useState<$t>($...)`
+	} where or {
+		// Setter used directly
+		and {
+			$body <: [
+				...,
+
+				JsExpressionStatement(expression=`$setter($...)`),
+
+				...
+			],
+			$cleanup <: contains or {
+				`$setter($...)`,
+				`$_($..., $setter, $...)`
+			}
+		},
+		// Setter derived from variable
+		and {
+			$body <: or {
+				[
+					...,
+
+					JsFunctionDeclaration(id=$dec) as $declaration,
+
+					...,
+
+					JsExpressionStatement(expression=`$dec($...)`),
+
+					...
+				],
+				[
+					...,
+
+					JsFunctionDeclaration(id=$dec) as $declaration,
+
+					...,
+
+					JsExpressionStatement(expression=`$setter($...)`),
+
+					...
+				],
+				[
+					...,
+
+					JsVariableStatement(declaration=$declaration),
+
+					...,
+
+					JsExpressionStatement(expression=`$setter($...)`),
+
+					...
+				],
+				[
+					...,
+
+					JsVariableStatement(declaration=$declaration),
+
+					...,
+
+					JsExpressionStatement(expression=`$dec($...)`),
+
+					...
+				]
+			},
+			$declaration <: contains `$setter`,
+			or {
+				$cleanup <: `$dec`,
+				$cleanup <: contains or {
+					`$setter($...)`,
+					`$dec($...)`,
+					`$_($..., $setter, $...)`,
+					`$_($..., $dec, $...)`
+				}
+			}
+		}
+	},
+	register_diagnostic(span=$effect, severity="error", message="This effect subscribes to an external store. The `useSyncExternalStore` hook is better suited for this use case, as it correctly handles concurrent and server rendering: https://react.dev/learn/you-might-not-need-an-effect#subscribing-to-an-external-store")
+}

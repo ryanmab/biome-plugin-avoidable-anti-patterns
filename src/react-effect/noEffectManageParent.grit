@@ -1,0 +1,22 @@
+language js
+
+`useEffect(() => { $body }, $deps)` as $effect where {
+	// Effect is inside a component
+	$effect <: within or {
+		JsFunctionDeclaration(parameters=$params, body=JsFunctionBody(statements=$stmts)),
+		JsArrowFunctionExpression(parameters=$params, body=JsFunctionBody(statements=$stmts))
+	} ,
+	// Effect has dependencies
+	and { $deps <: not `[]` },
+	$deps <: not contains JsReferenceIdentifier() as $dep where and {
+		$params <: not contains $dep,
+		// Variables which are exclusively derived from a parameter and used as a dependency
+		not {
+			$stmts <: contains JsVariableDeclarator(id=`$dep`, initializer=$initaliser),
+			$initaliser <: JsInitializerClause(expression=JsIdentifierExpression(name=$p)) where {
+				$params <: contains `$p`
+			}
+		}
+	},
+	register_diagnostic(span=$effect, severity="error", message="This effect contains exclusively dependencies which are props. This effect would be better expressed as additional logic on the parent event handler which changes the properties.")
+}
