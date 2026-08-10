@@ -4,6 +4,10 @@
     "description": "A collection of opinionated Biome rules for identifying and avoiding common code anti-patterns.",
     "license": "MIT",
     "author": "Ryan Maber",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ryanmab/biome-plugin-avoidable-anti-patterns.git"
+    },
     "type": "module",
     "scripts": {
         "lint": "biome lint",
