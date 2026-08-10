@@ -27,17 +27,17 @@ Add the following rules to Biome's configuration file (`biome.json`):
 ```json
 {
     "plugins": [
-        "./node_modules/@ryanmab/biome-plugin-avoidable-anti-patterns/react-effect/noEffectInitialiseState.grit",
-        "./node_modules/@ryanmab/biome-plugin-avoidable-anti-patterns/react-effect/noEffectDeriveState.grit",
-        "./node_modules/@ryanmab/biome-plugin-avoidable-anti-patterns/react-effect/noEffectChain.grit",
-        "./node_modules/@ryanmab/biome-plugin-avoidable-anti-patterns/react-effect/noEffectFetchWithoutCleanup.grit",
-        "./node_modules/@ryanmab/biome-plugin-avoidable-anti-patterns/react-effect/noEffectPassStateToParent.grit",
-        "./node_modules/@ryanmab/biome-plugin-avoidable-anti-patterns/react-effect/noEffectEventHandler.grit",
-        "./node_modules/@ryanmab/biome-plugin-avoidable-anti-patterns/react-effect/noEffectResetState.grit",
-        "./node_modules/@ryanmab/biome-plugin-avoidable-anti-patterns/react-effect/noEffectSetStateOnPropChange.grit",
-        "./node_modules/@ryanmab/biome-plugin-avoidable-anti-patterns/react-effect/noEffectSyncExternalStore.grit",
-        "./node_modules/@ryanmab/biome-plugin-avoidable-anti-patterns/react-effect/noEffectEmpty.grit",
-        "./node_modules/@ryanmab/biome-plugin-avoidable-anti-patterns/react-effect/noEffectManageParent.grit"
+        "./node_modules/@ryanmab/biome-plugin-avoidable-anti-patterns/src/react-effect/noEffectInitialiseState.grit",
+        "./node_modules/@ryanmab/biome-plugin-avoidable-anti-patterns/src/react-effect/noEffectDeriveState.grit",
+        "./node_modules/@ryanmab/biome-plugin-avoidable-anti-patterns/src/react-effect/noEffectChain.grit",
+        "./node_modules/@ryanmab/biome-plugin-avoidable-anti-patterns/src/react-effect/noEffectFetchWithoutCleanup.grit",
+        "./node_modules/@ryanmab/biome-plugin-avoidable-anti-patterns/src/react-effect/noEffectPassStateToParent.grit",
+        "./node_modules/@ryanmab/biome-plugin-avoidable-anti-patterns/src/react-effect/noEffectEventHandler.grit",
+        "./node_modules/@ryanmab/biome-plugin-avoidable-anti-patterns/src/react-effect/noEffectResetState.grit",
+        "./node_modules/@ryanmab/biome-plugin-avoidable-anti-patterns/src/react-effect/noEffectSetStateOnPropChange.grit",
+        "./node_modules/@ryanmab/biome-plugin-avoidable-anti-patterns/src/react-effect/noEffectSyncExternalStore.grit",
+        "./node_modules/@ryanmab/biome-plugin-avoidable-anti-patterns/src/react-effect/noEffectEmpty.grit",
+        "./node_modules/@ryanmab/biome-plugin-avoidable-anti-patterns/src/react-effect/noEffectManageParent.grit"
     ]
 }
 ```
