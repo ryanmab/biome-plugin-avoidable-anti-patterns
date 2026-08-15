@@ -13,8 +13,20 @@ language js
 		// Variables which are exclusively derived from a parameter and used as a dependency
 		not {
 			$stmts <: contains JsVariableDeclarator(id=`$dep`, initializer=$initaliser),
-			$initaliser <: JsInitializerClause(expression=JsIdentifierExpression(name=$p)) where {
-				$params <: contains `$p`
+			$initaliser <: JsInitializerClause(expression=JsIdentifierExpression(name=$p)) where any {
+				// Parameters which are direct arguments
+				$params <: JsParameters(items=[
+					..., JsFormalParameter(binding=`$p`), ...
+				]),
+				// Parameters which are either object keys, or the binding of another key
+				$params <: contains or {
+					JsObjectBindingPatternShorthandProperty(identifier=`$p`),
+					JsObjectBindingPatternProperty() as $pat where {
+						$pat <: contains JsIdentifierBinding() as $ident where {
+							$ident <: $p
+						}
+					}
+				}
 			}
 		}
 	},

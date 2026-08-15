@@ -160,6 +160,38 @@ exports[`noEffectEventEventHandler matches invalid fixture: withMixture.tsx 1`] 
 "
 `;
 
+exports[`noEffectEventEventHandler matches invalid fixture: withReboundIdentifiers.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": [
+    {
+      "code": {
+        "value": "plugin"
+      },
+      "location": {
+        "path": "src/react-effect/__tests__/fixtures/noEffectEventHandler/invalid/withReboundIdentifiers.tsx",
+        "range": {
+          "end": {
+            "column": 18,
+            "line": 9
+          },
+          "start": {
+            "column": 5,
+            "line": 6
+          }
+        }
+      },
+      "message": "This effect is used with state or props to mimic an event handler. Put this logic in the event handler which modifies the state or props, where you know what the user actually did: https://react.dev/learn/you-might-not-need-an-effect#sending-a-post-request",
+      "severity": "ERROR"
+    }
+  ]
+}
+"
+`;
+
 exports[`noEffectEventEventHandler matches invalid fixture: withState.tsx 1`] = `
 "{
   "source": {

@@ -15,8 +15,8 @@ language js
 		]
 	},
 	$effect <: within or {
-		JsFunctionDeclaration(body=$stmts, parameters=$params),
-		JsArrowFunctionExpression(body=$stmts, parameters=$params)
+		JsFunctionDeclaration(body=$stmts),
+		JsArrowFunctionExpression(body=$stmts)
 	} ,
 	$stmts <: contains or {
 		`const [$_, $setter] = useState($...)`,
