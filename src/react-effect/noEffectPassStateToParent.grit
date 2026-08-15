@@ -23,8 +23,22 @@ language js
 						`const [$reference, $_] = useState($...)`,
 						`const [$reference, $_] = useState<$t>($...)`
 					},
-					$params <: contains `$callback`,
-					$args <: contains $variable_declaration
+					any {
+						// Parameters which are direct arguments
+						$params <: JsParameters(items=[
+							..., JsFormalParameter(binding=`$callback`), ...
+						]),
+						// Parameters which are either object keys, or the binding of another key
+						$params <: contains or {
+							JsObjectBindingPatternShorthandProperty(identifier=`$callback`),
+							JsObjectBindingPatternProperty() as $pat where {
+								$pat <: contains JsIdentifierBinding() as $ident where {
+									$ident <: $callback
+								}
+							}
+						},
+						$args <: contains $variable_declaration
+					}
 				}
 			}
 		},
@@ -44,7 +58,21 @@ language js
 						`const [$reference, $_] = useState($...)`,
 						`const [$reference, $_] = useState<$t>($...)`
 					},
-					$params <: contains $callback
+					any {
+						// Parameters which are direct arguments
+						$params <: JsParameters(items=[
+							..., JsFormalParameter(binding=`$callback`), ...
+						]),
+						// Parameters which are either object keys, or the binding of another key
+						$params <: contains or {
+							JsObjectBindingPatternShorthandProperty(identifier=`$callback`),
+							JsObjectBindingPatternProperty() as $pat where {
+								$pat <: contains JsIdentifierBinding() as $ident where {
+									$ident <: $callback
+								}
+							}
+						}
+					}
 				}
 			}
 		}

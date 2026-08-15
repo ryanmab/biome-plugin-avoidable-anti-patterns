@@ -54,7 +54,19 @@ language js
 						`const [$_, $setter] = useState<$t>($_)`
 					},
 					or {
-						$params <: contains $reference,
+						// Parameters which are direct arguments
+						$params <: JsParameters(items=[
+							..., JsFormalParameter(binding=`$reference`), ...
+						]),
+						// Parameters which are either object keys, or the binding of another key
+						$params <: contains or {
+							JsObjectBindingPatternShorthandProperty(identifier=`$reference`),
+							JsObjectBindingPatternProperty() as $pat where {
+								$pat <: contains JsIdentifierBinding() as $ident where {
+									$ident <: $reference
+								}
+							}
+						},
 						{
 							$stmts <: contains or {
 								`const [$reference, $otherSetter] = useState($...)`,

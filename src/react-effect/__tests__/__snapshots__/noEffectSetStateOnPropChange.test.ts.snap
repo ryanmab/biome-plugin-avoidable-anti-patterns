@@ -180,6 +180,38 @@ exports[`noEffectSetStateOnPropChange matches invalid fixture: withMultiple.tsx 
 "
 `;
 
+exports[`noEffectSetStateOnPropChange matches invalid fixture: withReboundIdentifiers.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": [
+    {
+      "code": {
+        "value": "plugin"
+      },
+      "location": {
+        "path": "src/react-effect/__tests__/fixtures/noEffectSetStateOnPropChange/invalid/withReboundIdentifiers.tsx",
+        "range": {
+          "end": {
+            "column": 15,
+            "line": 8
+          },
+          "start": {
+            "column": 5,
+            "line": 6
+          }
+        }
+      },
+      "message": "This effect adjusts state based on changes to props. Instead adjust the state during render based on prop changes: https://react.dev/learn/you-might-not-need-an-effect#adjusting-some-state-when-a-prop-changes",
+      "severity": "ERROR"
+    }
+  ]
+}
+"
+`;
+
 exports[`noEffectSetStateOnPropChange matches invalid fixture: withState.tsx 1`] = `
 "{
   "source": {

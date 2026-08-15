@@ -16,8 +16,20 @@ language js
 			`const [$_, $setter] = useState<$_>($...)`
 		} where {
 			$body <: contains `$setter($...)`,
-			$deps <: contains JsIdentifierExpression(name=$dep) where {
-				$params <: contains $dep
+			$deps <: contains JsIdentifierExpression(name=$dep) where any {
+				// Parameters which are direct arguments
+				$params <: JsParameters(items=[
+					..., JsFormalParameter(binding=`$dep`), ...
+				]),
+				// Parameters which are either object keys, or the binding of another key
+				$params <: contains or {
+					JsObjectBindingPatternShorthandProperty(identifier=`$dep`),
+					JsObjectBindingPatternProperty() as $pat where {
+						$pat <: contains JsIdentifierBinding() as $ident where {
+							$ident <: $dep
+						}
+					}
+				}
 			}
 		}
 	},

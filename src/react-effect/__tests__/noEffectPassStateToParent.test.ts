@@ -6,7 +6,7 @@ import path from "node:path"
 const invalidFixtures = (await glob(`${import.meta.dirname}/fixtures/noEffectPassStateToParent/invalid/*.{ts,tsx,js,jsx}`)).map((p) => ({filename: path.basename(p), path: p}))
 const validFixtures = (await glob(`${import.meta.dirname}/fixtures/noEffectPassStateToParent/valid/*.{ts,tsx,js,jsx}`)).map((p) => ({filename: path.basename(p), path: p}))
 
-describe("nEffectPassStateToParentoEffectDeriveState",  () => {
+describe("noEffectPassStateToParent",  () => {
 	it.each(invalidFixtures)("matches invalid fixture: $filename", ({path}) => {
 		const { stdout, status } = lint(path);
 
