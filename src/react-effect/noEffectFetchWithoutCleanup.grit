@@ -4,42 +4,25 @@ language js
 	$effect <: within JsFunctionBody(statements=$stmts) ,
 	// Effect is likely used for data fetching
 	or {
-		$body <: contains `fetch($_)`,
-		$body <: contains `fetch()`,
-		$body <: contains `axios($_)`,
-		$body <: contains `axios()`,
-		$body <: contains `axios.$method($_)`,
-		$body <: contains `axios.$method()`,
-		$body <: contains `$client.get($_)`,
-		$body <: contains `$client.get()`,
-		$body <: contains `$client.post($_)`,
-		$body <: contains `$client.post()`,
-		$body <: contains `$client.put($_)`,
-		$body <: contains `$client.put()`,
-		$body <: contains `$client.delete($_)`,
-		$body <: contains `$client.delete()`,
-		$body <: contains `$client.patch($_)`,
-		$body <: contains `$client.patch()`,
-		$body <: contains `$client.request($_)`,
-		$body <: contains `$client.request()`,
-		$body <: contains `$.ajax($_)`,
-		$body <: contains `$.ajax()`,
-		$body <: contains `$.get($_)`,
-		$body <: contains `$.get()`,
-		$body <: contains `$.post($_)`,
-		$body <: contains `$.post()`,
-		$body <: contains `api.$method($_)`,
-		$body <: contains `api.$method()`,
-		$body <: contains `api.get($_)`,
-		$body <: contains `api.get()`,
-		$body <: contains `api.post($_)`,
-		$body <: contains `api.post()`,
-		$body <: contains `api.put($_)`,
-		$body <: contains `api.put()`,
-		$body <: contains `api.delete($_)`,
-		$body <: contains `api.delete()`,
-		$body <: contains `api.patch($_)`,
-		$body <: contains `api.patch()`
+		// Effect uses the Fetch API (either directly via node-fetch, or indirectly by global)
+		$body <: contains `$callback($...)` where any {
+			$program <: contains `import $callback from 'node-fetch'`,
+			and {
+				$callback <: `fetch`,
+				$program <: not contains JsVariableDeclarator(id=`fetch`)
+			}
+		},
+		// Effect uses axios
+		$body <: contains or {
+			`$callback($...)`,
+			`$callback.$method($...)`
+		} where { $program <: contains `import $callback from 'axios'` },
+		// Effect uses jQuery
+		$body <: contains or {
+			contains `$callback.ajax($...)`,
+			contains `$callback.get($...)`,
+			contains `$callback.post($...)`
+		} where { $program <: contains `import $callback from 'jquery'` }
 	},
 	// Effect does not run a cleanup on unmount
 	$body <: not [

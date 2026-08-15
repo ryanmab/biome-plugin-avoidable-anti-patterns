@@ -32,7 +32,146 @@ exports[`noEffectFetchWithoutCleanup matches invalid fixture: reactDocsExample.t
 "
 `;
 
+exports[`noEffectFetchWithoutCleanup matches invalid fixture: withAxios.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": [
+    {
+      "code": {
+        "value": "plugin"
+      },
+      "location": {
+        "path": "src/react-effect/__tests__/fixtures/noEffectFetchWithoutCleanup/invalid/withAxios.tsx",
+        "range": {
+          "end": {
+            "column": 13,
+            "line": 7
+          },
+          "start": {
+            "column": 2,
+            "line": 5
+          }
+        }
+      },
+      "message": "This effect performs network requests with no cleanup function, so a fast dependency change can apply a stale response. Consider adding an \`ignore\` flag which is filled in a cleanup function, or use a framework for data-fetching: https://react.dev/learn/you-might-not-need-an-effect#fetching-data",
+      "severity": "ERROR"
+    }
+  ]
+}
+"
+`;
+
+exports[`noEffectFetchWithoutCleanup matches invalid fixture: withGlobalFetch.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": [
+    {
+      "code": {
+        "value": "plugin"
+      },
+      "location": {
+        "path": "src/react-effect/__tests__/fixtures/noEffectFetchWithoutCleanup/invalid/withGlobalFetch.tsx",
+        "range": {
+          "end": {
+            "column": 16,
+            "line": 6
+          },
+          "start": {
+            "column": 5,
+            "line": 4
+          }
+        }
+      },
+      "message": "This effect performs network requests with no cleanup function, so a fast dependency change can apply a stale response. Consider adding an \`ignore\` flag which is filled in a cleanup function, or use a framework for data-fetching: https://react.dev/learn/you-might-not-need-an-effect#fetching-data",
+      "severity": "ERROR"
+    }
+  ]
+}
+"
+`;
+
+exports[`noEffectFetchWithoutCleanup matches invalid fixture: withJquery.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": [
+    {
+      "code": {
+        "value": "plugin"
+      },
+      "location": {
+        "path": "src/react-effect/__tests__/fixtures/noEffectFetchWithoutCleanup/invalid/withJquery.tsx",
+        "range": {
+          "end": {
+            "column": 16,
+            "line": 7
+          },
+          "start": {
+            "column": 5,
+            "line": 5
+          }
+        }
+      },
+      "message": "This effect performs network requests with no cleanup function, so a fast dependency change can apply a stale response. Consider adding an \`ignore\` flag which is filled in a cleanup function, or use a framework for data-fetching: https://react.dev/learn/you-might-not-need-an-effect#fetching-data",
+      "severity": "ERROR"
+    }
+  ]
+}
+"
+`;
+
+exports[`noEffectFetchWithoutCleanup matches invalid fixture: withNodeFetch.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": [
+    {
+      "code": {
+        "value": "plugin"
+      },
+      "location": {
+        "path": "src/react-effect/__tests__/fixtures/noEffectFetchWithoutCleanup/invalid/withNodeFetch.tsx",
+        "range": {
+          "end": {
+            "column": 16,
+            "line": 7
+          },
+          "start": {
+            "column": 5,
+            "line": 5
+          }
+        }
+      },
+      "message": "This effect performs network requests with no cleanup function, so a fast dependency change can apply a stale response. Consider adding an \`ignore\` flag which is filled in a cleanup function, or use a framework for data-fetching: https://react.dev/learn/you-might-not-need-an-effect#fetching-data",
+      "severity": "ERROR"
+    }
+  ]
+}
+"
+`;
+
 exports[`noEffectFetchWithoutCleanup matches valid fixture: withCleanup.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": []
+}
+"
+`;
+
+exports[`noEffectFetchWithoutCleanup matches valid fixture: withRedefinedFetch.tsx 1`] = `
 "{
   "source": {
     "name": "Biome",
