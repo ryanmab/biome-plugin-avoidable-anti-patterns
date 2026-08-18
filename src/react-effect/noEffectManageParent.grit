@@ -9,7 +9,21 @@ language js
 	// Effect has dependencies
 	and { $deps <: not `[]` },
 	$deps <: not contains JsReferenceIdentifier() as $dep where and {
-		$params <: not contains $dep,
+		// Parameters used directly as a dependency
+		not any {
+			$params <: JsParameters(items=[
+				..., JsFormalParameter(binding=`$dep`), ...
+			]),
+			// Parameters which are either object keys, or the binding of another key
+			$params <: contains or {
+				JsObjectBindingPatternShorthandProperty(identifier=`$dep`),
+				JsObjectBindingPatternProperty() as $pat where {
+					$pat <: contains JsIdentifierBinding() as $ident where {
+						$ident <: $dep
+					}
+				}
+			}
+		},
 		// Variables which are exclusively derived from a parameter and used as a dependency
 		not {
 			$stmts <: contains JsVariableDeclarator(id=`$dep`, initializer=$initaliser),
