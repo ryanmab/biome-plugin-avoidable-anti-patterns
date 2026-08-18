@@ -52,6 +52,7 @@ language js
 			// that shouldn't be flagged by this lint.
 			$reference <: not within `$_($..., $reference, $...)` ,
 			$reference <: within JsIfStatement(test=$test) where {
+				$test <: contains $reference,
 				or {
 					// Parameters which are direct arguments
 					$params <: JsParameters(items=[

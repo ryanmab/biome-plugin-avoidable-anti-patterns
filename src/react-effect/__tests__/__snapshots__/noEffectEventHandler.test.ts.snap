@@ -234,3 +234,14 @@ exports[`noEffectEventEventHandler matches valid fixture: withDerivedFromCalledF
 }
 "
 `;
+
+exports[`noEffectEventEventHandler matches valid fixture: withOnlyIdentifiersInBranchBody.tsx 1`] = `
+"{
+  "source": {
+    "name": "Biome",
+    "url": "https://biomejs.dev"
+  },
+  "diagnostics": []
+}
+"
+`;
