@@ -1,6 +1,6 @@
 {
     "name": "@ryanmab/biome-plugin-avoidable-anti-patterns",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "A collection of opinionated Biome rules for identifying and avoiding common code anti-patterns.",
     "license": "MIT",
     "author": "Ryan Maber",
